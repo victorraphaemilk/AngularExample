@@ -1,0 +1,27 @@
+
+.conteiner-card-player {
+    display: flex;        
+    gap: 20px;            
+    list-style: none;    
+    padding: 2% 0px 0px 0px;           
+    margin: 0;
+    margin-left: 25%;
+    margin-right: 25%;
+}
+
+
+.card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 16px;
+    text-align: center;
+    width: 200px;   
+    background-color: #ccc;     
+}
+
+
+.card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+}

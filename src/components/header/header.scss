@@ -1,11 +1,25 @@
-header {
-    background-color: blue;
+.main-header {
+    background-color: #0f172a; /* Azul escuro moderno e muito mais elegante */
+    padding: 1rem 3rem;
+    display: flex; /* Coloca o logo e a navegação na mesma linha */
+    justify-content: space-between; /* Empurra o logo para a esquerda e a nav para a direita */
+    align-items: center; /* Centra tudo verticalmente */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Sombra para separar o header do conteúdo */
 }
 
 h1 {
-    color: whitesmoke;
-    margin-top: 0px;
-    margin-bottom: 0px;
-    padding: 1rem;
-}
+    margin: 0;
+    
+    a {
+        color: #ffffff;
+        text-decoration: none;
+        font-size: 2rem;
+        font-weight: bold;
+        letter-spacing: 2px;
+        transition: color 0.3s ease;
 
+        &:hover {
+            color: #3b82f6; /* Cor de destaque ao passar o rato no logo */
+        }
+    }
+}

@@ -1,0 +1,110 @@
+/* A secção principal usa Flexbox para alinhar conteúdo lado a lado no desktop */
+.hero-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4rem;
+    padding: 5rem 2rem;
+    min-height: 70vh; /* Garante que ocupa uma boa parte do ecrã */
+    background: linear-gradient(135deg, #f8fafc, #e2e8f0); /* Fundo claro e moderno para contrastar com o header escuro */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Área da esquerda: Texto e Botão */
+.hero-content {
+    flex: 1;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Alinhamento à esquerda, muito mais profissional que tudo centrado */
+}
+
+/* O Greeting passa a ser um subtítulo discreto */
+.greeting {
+    color: #64748b;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+/* Título gigantesco e com impacto */
+.main-title {
+    color: #0f172a;
+    font-size: 4rem;
+    font-weight: 900;
+    line-height: 1.1;
+    margin: 0 0 2rem 0;
+    text-transform: uppercase;
+
+    .highlight {
+        color: #3b82f6; /* Destaque azul para a palavra "Futebol" */
+    }
+}
+
+/* O botão solto transforma-se num Call to Action (CTA) apelativo */
+.cta-button {
+    background-color: #3b82f6;
+    color: white;
+    border: none;
+    padding: 1rem 2.5rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 14px rgba(59, 130, 246, 0.4);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+
+    &:hover {
+        background-color: #2563eb;
+        transform: translateY(-4px); /* Botão levanta ao passar o rato */
+    }
+    
+    &:active {
+        transform: translateY(0); /* Efeito de clique físico */
+    }
+}
+
+/* Área da direita: O GIF */
+.hero-media {
+    flex: 1;
+    max-width: 550px;
+    display: flex;
+    justify-content: center;
+}
+
+/* Tratamento brutal do GIF para não parecer um quadrado inerte */
+.hero-gif {
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    transform: rotate(-3deg); /* Inclinação desportiva/dinâmica */
+    transition: transform 0.4s ease;
+
+    &:hover {
+        transform: rotate(0deg) scale(1.05); /* Endireita e cresce ao passar o rato */
+    }
+}
+
+/* Responsividade: Ecrãs de telemóvel e tablets pequenos */
+@media (max-width: 850px) {
+    .hero-section {
+        flex-direction: column-reverse; /* Imagem fica em cima, texto passa para baixo */
+        text-align: center;
+        gap: 2.5rem;
+        padding: 3rem 1.5rem;
+    }
+
+    .hero-content {
+        align-items: center; /* Volta a centrar o texto no mobile */
+    }
+
+    .main-title {
+        font-size: 2.8rem; /* Reduz o título para não partir o ecrã */
+    }
+    
+    .hero-gif {
+        transform: rotate(0); /* Remove a inclinação no telemóvel para poupar espaço */
+    }
+}

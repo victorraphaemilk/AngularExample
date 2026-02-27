@@ -1,12 +1,65 @@
-.footer-tcs{
-    background-color: gray;
-    color: rgb(255, 255, 255);
+/* O footer passa a acompanhar o fim da página, e não o ecrã, graças à remoção do position: fixed */
+.footer-tcs {
+    background-color: #0f172a; /* O mesmo azul escuro elegante que usámos no header */
+    color: #e2e8f0;
+    padding-top: 3rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    width: 100%;
+    margin-top: 3rem; /* Espaço para respirar antes do footer */
 }
 
-a{
-    color: white;
+.footer-content {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 2rem;
 }
 
-.direitos-reservados{
-    margin-bottom: 0px;
+.social-section {
+    text-align: center;
+    
+    p {
+        font-size: 1.2rem;
+        font-weight: bold;
+        margin-bottom: 1.5rem;
+        color: #ffffff;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+    }
+}
+
+/* Flexbox para as redes sociais ficarem lado a lado de forma limpa */
+.social-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+
+    li a {
+        color: #94a3b8;
+        text-decoration: none;
+        font-size: 1.1rem;
+        transition: color 0.3s ease, transform 0.3s ease;
+        display: block;
+
+        /* Efeito interativo ao passar o rato */
+        &:hover {
+            color: #3b82f6; 
+            transform: translateY(-4px); /* As letras saltam ligeiramente */
+        }
+    }
+}
+
+/* Área separada para os direitos reservados, com contraste */
+.footer-bottom {
+    background-color: #020617; /* Um tom quase preto para ancorar o fim da página */
+    text-align: center;
+    padding: 1.5rem;
+
+    .direitos-reservados {
+        margin: 0;
+        font-size: 0.9rem;
+        color: #64748b;
+    }
 }

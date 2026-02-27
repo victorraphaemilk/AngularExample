@@ -1,0 +1,10 @@
+<div class="container-grid">
+  @for (item of $dados | async; track item.nome) {
+    <div class="card-artilheiro">
+      <h3>{{ item.nome }}</h3>
+      <div class="gols-count">{{ item.gols }} Gols</div>
+    </div>
+  } @empty {
+    <p>Nenhum dado encontrado ou carregando...</p>
+  }
+</div>

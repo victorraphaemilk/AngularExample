@@ -1,5 +1,6 @@
 import { inject, Injectable, signal } from "@angular/core";
-import { Auth, signInWithPopup, user, GoogleAuthProvider, signOut, User } from "@angular/fire/auth";
+import { Auth, signInWithRedirect, user, GoogleAuthProvider, signOut, User } from "@angular/fire/auth";
+
 
 @Injectable({
     providedIn:'root'
@@ -21,7 +22,7 @@ export class AuthService{
     async loginComGoogle(){
         const provider = new GoogleAuthProvider();
         try{
-            await signInWithPopup(this.auth, provider)
+            await signInWithRedirect(this.auth, provider)
         }catch (error){
             console.error("Erro no login", error)
         }

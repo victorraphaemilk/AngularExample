@@ -21,7 +21,7 @@ export class DetalhesReceita implements OnInit {
     const id = this.rota.snapshot.paramMap.get("id");
     
     if (!id) {
-      this.carregando.set(false); // Atualiza com .set()
+      this.carregando.set(false); 
       return;
     }
 
@@ -34,7 +34,7 @@ export class DetalhesReceita implements OnInit {
         if (resposta?.meals?.length > 0) {
           const dadosReceita = resposta.meals[0];
           
-          this.receita.set(dadosReceita); // Atualiza a receita na tela na hora
+          this.receita.set(dadosReceita); 
           this.extrairIngredientes(dadosReceita);
         } else {
           console.error("Nenhuma receita encontrada para o ID:", id);
@@ -44,7 +44,7 @@ export class DetalhesReceita implements OnInit {
         console.error("A requisição falhou. Verifique a rede ou possíveis bloqueios de firewall.", erro);
       },
       complete: () => {
-        this.carregando.set(false); // Desliga o loading na hora
+        this.carregando.set(false); 
       }
     });
   }
@@ -64,7 +64,6 @@ export class DetalhesReceita implements OnInit {
       }
     }
     
-    // Atualiza o Signal com a lista pronta
     this.ingredientesLimpos.set(arrayTemporario);
   }
 }

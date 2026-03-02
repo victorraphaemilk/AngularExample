@@ -1,0 +1,37 @@
+@if (carregando()) {
+  <div class="loading">A preparar a sua receita...</div>
+} @else if (receita()) {
+  <article class="receita-container">
+    
+    <header class="receita-header">
+      <h1>{{ receita().strMeal }}</h1>
+      <span class="badge">{{ receita().strArea }}</span>
+      <span class="badge">{{ receita().strCategory }}</span>
+    </header>
+
+    <div class="receita-grid">
+      <div class="imagem-box">
+        <img [src]="receita().strMealThumb" [alt]="receita().strMeal">
+      </div>
+
+      <div class="ingredientes-box">
+        <h2>Ingredientes</h2>
+        <ul>
+          @for (item of ingredientesLimpos(); track item.nome) {
+            <li>
+              <strong>{{ item.medida }}</strong> {{ item.nome }}
+            </li>
+          }
+        </ul>
+      </div>
+    </div>
+
+    <div class="preparacao-box">
+      <h2>Modo de Preparação</h2>
+      <p>{{ receita().strInstructions }}</p>
+    </div>
+
+  </article>
+} @else {
+  <div class="loading">Erro: Não foi possível carregar a receita. Verifique a conexão ou o bloqueio de rede.</div>
+}

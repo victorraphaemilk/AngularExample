@@ -1,12 +1,16 @@
 <section class="hero-section">
     <div class="hero-content">
-        <h2 class="greeting">{{GreetingService.stringgs}}</h2>
-        <h1 class="main-title">O Principal Site de <span class="highlight">Futebol</span></h1>
+        <div class="greeting-container">
+            <h2 class="greeting">{{GreetingService.stringgs || 'Bom dia'}}</h2>
+            <button class="btn-greeting" (click)="trocarGreeting()" title="Mudar Saudação">↻</button>
+        </div>
         
-        <button class="cta-button" (click)="trocarGreeting()">Trocar Greeting</button>
+        <h1 class="main-title">Descubra Novas <span class="highlight">Receitas</span> Todos os Dias</h1>
+        
+        <button class="cta-button" [routerLink]="['receitas']">Ver Todas as Receitas</button>
     </div>
     
     <div class="hero-media">
-        <img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExZ2NicnR2a2ZhZ29hOWxldnhzamJ0M3NvbHV3NXBvZGlubjIwY3E3aCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3oszKhk3tzjQEDPvC8/giphy.gif" alt="Gif de Futebol" class="hero-gif">
+        <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=1000&auto=format&fit=crop" alt="Prato delicioso" class="hero-gif">
     </div>
 </section>

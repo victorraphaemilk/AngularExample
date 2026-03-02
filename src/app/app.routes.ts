@@ -1,11 +1,11 @@
 import { Routes } from '@angular/router';
-import { BetterPlayers } from '../components/better-players/better-players';
 import { Principal } from './pages/principal/principal';
-import { Transferencias } from './pages/transferencias/transferencias';
+import { ListaReceitas } from './pages/lista-receitas/lista-receitas';
+import { DetalhesReceita } from './pages/detalhes-receita/detalhes-receita';
 
 export const routes: Routes = [
-    {path: "melhores", component: BetterPlayers},
+    {path: "receitas", component: ListaReceitas},
+    {path: "receita/:id", component:DetalhesReceita},
     {path: "", component: Principal},
-    {path: "transferencias", component: Transferencias},
     { path: '**', redirectTo: '' }
 ];

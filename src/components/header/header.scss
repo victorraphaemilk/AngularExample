@@ -1,10 +1,10 @@
 .main-header {
-    background-color: #0f172a; /* Azul escuro moderno e muito mais elegante */
+    background-color: #292524;
     padding: 1rem 3rem;
-    display: flex; /* Coloca o logo e a navegação na mesma linha */
-    justify-content: space-between; /* Empurra o logo para a esquerda e a nav para a direita */
-    align-items: center; /* Centra tudo verticalmente */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Sombra para separar o header do conteúdo */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 h1 {
@@ -19,7 +19,66 @@ h1 {
         transition: color 0.3s ease;
 
         &:hover {
-            color: #3b82f6; /* Cor de destaque ao passar o rato no logo */
+            color: #DC2626;
+        }
+    }
+}
+
+/* ... mantenha o código do header que já lá tem ... */
+
+/* Área de Login */
+.auth-section {
+    display: flex;
+    align-items: center;
+}
+
+.btn-login-google {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    color: #3c4043;
+    border: 1px solid #dadce0;
+    border-radius: 4px;
+    padding: 8px 16px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    font-family: 'Segoe UI', sans-serif;
+    transition: background-color 0.2s, box-shadow 0.2s;
+
+    &:hover {
+        background-color: #f8f9fa;
+        box-shadow: 0 1px 2px 0 rgba(60,64,67,0.3), 0 1px 3px 1px rgba(60,64,67,0.15);
+    }
+}
+
+.logged-in-profile {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    .avatar {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        border: 2px solid #DC2626; 
+        object-fit: cover;
+    }
+
+    .btn-logout {
+        background: transparent;
+        border: 1px solid #94a3b8;
+        color: #e2e8f0;
+        padding: 6px 14px;
+        border-radius: 20px;
+        cursor: pointer;
+        font-weight: bold;
+        transition: all 0.3s ease;
+
+        &:hover {
+            background-color: #DC2626;
+            border-color: #DC2626;
+            color: white;
         }
     }
 }

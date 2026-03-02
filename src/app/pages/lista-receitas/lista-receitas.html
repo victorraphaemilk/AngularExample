@@ -1,0 +1,17 @@
+<app-barra-digitacao></app-barra-digitacao>
+
+<div class="receitas-grid">
+  @for (receita of listaDeReceitas(); track receita.idMeal) {
+    
+    <div class="receita-card">
+      <img [src]="receita.strMealThumb" [alt]="receita.strMeal" class="receita-img">
+      <h3 class="receita-nome">{{ receita.strMeal }}</h3>
+      <a class="btn-detalhes" [routerLink]="['/receita', receita.idMeal]">Ver Receita</a>
+    </div>
+
+  } @empty {
+    <p style="text-align: center; grid-column: 1 / -1; font-size: 1.2rem; color: #64748b;">
+      Nenhuma receita encontrada para a sua busca. Tente outro prato.
+    </p>
+  }
+</div>
